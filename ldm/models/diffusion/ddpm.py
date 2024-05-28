@@ -25,7 +25,7 @@ from ldm.models.autoencoder import VQModelInterface, IdentityFirstStage, Autoenc
 from ldm.modules.diffusionmodules.util import make_beta_schedule, extract_into_tensor, noise_like
 from ldm.models.diffusion.ddim import DDIMSampler
 
-from ldm.modules.lora_huawei import inject_trainable_lora
+#from ldm.modules.lora_huawei import inject_trainable_lora
 
 
 __conditioning_keys__ = {'concat': 'c_concat',
@@ -732,6 +732,7 @@ class LatentDiffusion(DDPM):
                 cond_key = self.cond_stage_key
             if cond_key != self.first_stage_key:
                 if cond_key in ['caption', 'objects_bbox']:
+                    print(batch)
                     xc = batch[cond_key]
                 elif cond_key == 'class_label':
                     xc = batch
