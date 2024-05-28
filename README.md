@@ -524,3 +524,12 @@ The models can then be found in `models/ldm/<model_spec>`.
     <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=CreamyLong/stable-diffusion&type=Date" />
 </picture>
 
+
+
+## Tooning foundation model training guide
+
+txt2img
+```shell script
+python main.py --base configs/latent-diffusion/txt2img/txt2img-sdv1.yaml -t True --gpus "0,"
+```
+
