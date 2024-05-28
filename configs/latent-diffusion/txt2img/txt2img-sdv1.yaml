@@ -3,7 +3,7 @@ model:
   target: ldm.models.diffusion.ddpm.LatentDiffusion
   params:
     ckpt_path: stable-diffusion-v1.5/v1-5-pruned.ckpt
-#    ckpt_path: stable-diffusion-v1.4/sd-v1-4.ckpt
+    #    ckpt_path: stable-diffusion-v1.4/sd-v1-4.ckpt
     linear_start: 0.0015
     linear_end: 0.0195
     num_timesteps_cond: 1
@@ -27,15 +27,15 @@ model:
         out_channels: 4
         model_channels: 320
         attention_resolutions:
-        - 4
-        - 2
-        - 1
+          - 4
+          - 2
+          - 1
         num_res_blocks: 2
         channel_mult:
-        - 1
-        - 2
-        - 4
-        - 4
+          - 1
+          - 2
+          - 4
+          - 4
         num_heads: 8
         use_spatial_transformer: true
         transformer_depth: 1
@@ -56,12 +56,12 @@ model:
           out_ch: 3
           ch: 128
           ch_mult:
-          - 1
-          - 2
-          - 4
-          - 4
+            - 1
+            - 2
+            - 4
+            - 4
           num_res_blocks: 2
-          attn_resolutions: []
+          attn_resolutions: [ ]
           dropout: 0.0
         lossconfig:
           target: torch.nn.Identity
@@ -76,15 +76,15 @@ data:
     num_workers: 4
     wrap: false
     train:
-      target: ldm.data.cls_txt.CustomTrain
+      target: ldm.data.custom.CustomTrain
       params:
         size: 512
-        training_images_list_file: train.txt
+        training_images_list_file: data/train.txt
     validation:
-      target: ldm.data.cls_txt.CustomTest
+      target: ldm.data.custom.CustomTest
       params:
         size: 512
-        test_images_list_file: train.txt
+        test_images_list_file: data/test.txt
 
 lightning:
   callbacks:
