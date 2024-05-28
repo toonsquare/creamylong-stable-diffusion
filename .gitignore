@@ -1,2 +1,9 @@
 /logs/*
 /stable-diffusion-v1.5/v1-5-pruned.ckpt
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/.gitignore
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/toonsquare-creamylong-stable-diffusion.iml
+/.idea/vcs.xml
